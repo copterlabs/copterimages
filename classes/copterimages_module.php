@@ -11,16 +11,24 @@ class CopterImages_Module extends Core_ModuleBase
     {
         return new Core_ModuleInfo(
             "Force Image Cropping",
-            "Adds the option to hard-crop images to a given size.",
+            "Adds the option to force crop images to a given size.",
             "Copter Labs Inc."
         );
     }
 
+    /**
+     * Subscribes to the core:onProcessImage event
+     * @return void
+     */
     public function subscribeEvents(  )
     {
         Backend::$events->addEvent('core:onProcessImage', $this, 'force_crop_image');
     }
 
+    /**
+     * Sets up file paths, checks for an existing image, fires up the helper
+     * @return string   The new image path
+     */
     public function force_crop_image($file, $width, $height, $return_jpeg, $params)
     {
         if ($params['mode'] != 'force_crop') {
