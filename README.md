@@ -1,5 +1,5 @@
-Force Crop Images LemonStand Module
-===================================
+Force Crop Images -- a LemonStand Module
+========================================
 
 A LemonStand module that adds the ability to force crop an image to a 
 given size. 
