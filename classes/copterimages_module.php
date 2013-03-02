@@ -37,9 +37,9 @@ class CopterImages_Module extends Core_ModuleBase
 
         $ext = $return_jpeg ? 'jpg' : 'png';
 
-        $image_path = '/uploaded/thumbnails/' 
-            . implode('.', array_slice(explode('.', $file->name), 0, -1)) 
-            . '_' . $file->id . '_' . $width . 'x' . $height . '.' . $ext;
+        $image_path = '/uploaded/thumbnails/' . $file->id 
+            . '_' . filemtime(PATH_APP.$file->getPath()) 
+            . '_' . $width . 'x' . $height . '.' . $ext;
         $image_file = PATH_APP . $image_path;
 
         if (file_exists($image_file)) {
