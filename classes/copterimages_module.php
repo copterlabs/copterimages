@@ -10,7 +10,7 @@ class CopterImages_Module extends Core_ModuleBase
     protected function createModuleInfo(  )
     {
         return new Core_ModuleInfo(
-            "Copter Labs Image Cropping",
+            "Force Image Cropping",
             "Adds the option to hard-crop images to a given size.",
             "Copter Labs Inc."
         );
